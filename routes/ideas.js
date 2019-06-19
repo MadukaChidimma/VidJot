@@ -56,7 +56,7 @@ router.get("/", ensureAuthenticated, (req, res) => {
       const newUser = {
         title: req.body.title,
         details: req.body.details,
-        user: req.user.id
+        user: req.body.id
       };
       new Idea(newUser).save().then(idea => {
         req.flash('success_msg', 'Video Idea Added');
